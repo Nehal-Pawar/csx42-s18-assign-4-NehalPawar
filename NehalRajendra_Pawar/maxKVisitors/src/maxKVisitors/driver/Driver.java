@@ -3,6 +3,11 @@ package maxKVisitors.driver;
 import maxKVisitors.util.FileProcessor;
 import maxKVisitors.util.Results;
 import maxKVisitors.util.MyLogger;
+import maxKVisitors.util.IVisitor;
+import maxKVisitors.util.PopulateVisitor;
+import maxKVisitors.util.MyArray;
+import maxKVisitors.util.MyVector;
+import maxKVisitors.util.AddElementInterface;
 import java.util.*;
 
 public class Driver
@@ -34,16 +39,10 @@ public class Driver
             System.err.println("fifth argument cannot be parse to integer to set debug value.");
             System.exit(1);
         }
-
-       
-        //Read file and add to array
-        FileProcessor F1 = new FileProcessor();
-        F1.openFile(INPUTFILE);
-		String number = "";
-		while (number != null) {
-			number = F1.nextint();
-			if(number == null)break;
-					System.out.println(number);	
-		}
+	
+	MyVector myv1=new MyVector(); 
+        IVisitor Obj=new PopulateVisitor();
+        myv1.setFileName(INPUTFILE);
+	Obj.visit(myv1);
     }
 }

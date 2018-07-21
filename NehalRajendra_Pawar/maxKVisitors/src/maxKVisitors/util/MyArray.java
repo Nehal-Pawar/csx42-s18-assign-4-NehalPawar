@@ -2,7 +2,12 @@ package maxKVisitors.util;
 
 import java.util.*;
 
-public abstract class MyArray 
+public  class MyArray implements AddElementInterface
 {
 	ArrayList<Integer> list=new ArrayList<Integer>();
+
+	public void addelement(int number)
+	{
+		 list.add(number);		
+	}
 }
