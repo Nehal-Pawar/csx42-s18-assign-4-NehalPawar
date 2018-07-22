@@ -73,10 +73,19 @@ public  class MyVector implements AddElementInterface
 		K=Re;
 	}
 
+	/**
+	 * This method returns concanetated result 
+	 * @return string K
+	 */
 	public String getResults()
 	{
 		return Results;
 	}
+	
+	/**
+	 * This method sets concanetated result 
+	 * @param string Re
+	 */	
 		
 	public void setResults(String Re)
 	{

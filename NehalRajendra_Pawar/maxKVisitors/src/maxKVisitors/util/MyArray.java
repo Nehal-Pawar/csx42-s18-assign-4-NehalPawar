@@ -55,20 +55,37 @@ public  class MyArray implements AddElementInterface
 		Visitor.visit(this);
 	}
 	
+	/**
+	 * This method returns number of elements to be displayed
+	 * @return int K
+	 */
 	public int getK()
 	{
 		return K;
 	}
 		
+	/**
+	 * This method sets number of elements to be displayed
+	 * @param int K
+	 */
 	public void setK(int Re)
 	{
 		K=Re;
 	}
+	
+	/**
+	 * This method returns concanetated result 
+	 * @return string K
+	 */
 	public String getResults()
 	{
 		return Results;
 	}
-		
+	
+	/**
+	 * This method sets concanetated result 
+	 * @param string Re
+	 */	
 	public void setResults(String Re)
 	{
 		Results=Re;
