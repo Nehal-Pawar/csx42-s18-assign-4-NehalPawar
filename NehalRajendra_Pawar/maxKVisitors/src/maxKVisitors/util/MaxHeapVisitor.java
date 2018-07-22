@@ -13,14 +13,14 @@ public class MaxHeapVisitor implements IVisitor
 	public void visit(MyVector myv)
 	{
 		Vector<Integer> Heap=myv.getvec();
-		
+		String Result="MyVector MaxHeap MaxK are : ";
 		sort(Heap);
 		
-		for (Object o : myv.getvec()) 
+		for (int j = 0; j < myv.getK(); j++) 
 		{
-			System.out.print(o + " ");
+			    Result=Result+Heap.get(j)+" ";
 		}
-		System.out.println("vec heap");
+		myv.setResults(Result);
 	}
 	
 	/**
@@ -29,16 +29,17 @@ public class MaxHeapVisitor implements IVisitor
 	 */
 	public void visit(MyArray mya)
 	{
-		ArrayList<Integer> Heap=new ArrayList<Integer>();
-		Heap=mya.getlist();
+		ArrayList<Integer> Heap=mya.getlist();
+		String Result="MyArray MaxHeap MaxK are : ";
 		sort(Heap);
 		
-		for (Object o : mya.getlist()) 
+		for (int j = 0; j < mya.getK(); j++) 
 		{
-			System.out.print(o + " ");
+			    Result=Result+Heap.get(j)+" ";
 		}
-		System.out.println("arrayheap");
+		mya.setResults(Result);
 	}
+
 	/**
 	 * This method swap elemtnts and calls heapify for MyVector vector myv in descending order
 	 * @param  arr from Vector<Integer> 

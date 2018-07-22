@@ -7,6 +7,7 @@ public  class MyArray implements AddElementInterface
 	ArrayList<Integer> list=new ArrayList<Integer>();
 	public  String FileName;
 	static int K;
+	public String Results;
 	/**
 	 * This method adds elemtnts from fileprocessor tp MyArray array
 	 * @param int number from fileprocessor
@@ -63,4 +64,14 @@ public  class MyArray implements AddElementInterface
 	{
 		K=Re;
 	}
+	public String getResults()
+	{
+		return Results;
+	}
+		
+	public void setResults(String Re)
+	{
+		Results=Re;
+	}
+
 }

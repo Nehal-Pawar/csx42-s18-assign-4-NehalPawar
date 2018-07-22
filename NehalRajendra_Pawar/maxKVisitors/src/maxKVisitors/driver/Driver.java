@@ -17,7 +17,7 @@ public class Driver
     public static void main(String[] args)
     {
         String INPUTFILE = args[0];
-        String K = args[1];
+        int K = Integer.parseInt(args[1]);
        /* String OUTPUTFILE1 = args[2];
         String OUTPUTFILE2 = args[3];
         String OUTPUTFILE3 = args[4];*/
@@ -47,7 +47,8 @@ public class Driver
         IVisitor Obj=new PopulateVisitor();
 
 	MyVector myv1=new MyVector(); 
-        myv1.setFileName(INPUTFILE);	
+        myv1.setFileName(INPUTFILE);
+	myv1.setK(K);	
 	myv1.accept(Obj);	
 	myv1.accept(Obj2);
 
@@ -59,6 +60,7 @@ public class Driver
 
 	MyArray mya1=new MyArray(); 
 	mya1.setFileName(INPUTFILE);
+	mya1.setK(K);
         mya1.accept(Obj);
 	mya1.accept(Obj2);
     
@@ -68,6 +70,9 @@ public class Driver
 	mya2.accept(Obj3);
 
 	Results Display=new Results();
-	
+	Display.writeToStdout(myv1.getResults());
+	Display.writeToStdout(myv2.getResults());
+	Display.writeToStdout(mya1.getResults());
+	Display.writeToStdout(mya2.getResults());
     }
 }

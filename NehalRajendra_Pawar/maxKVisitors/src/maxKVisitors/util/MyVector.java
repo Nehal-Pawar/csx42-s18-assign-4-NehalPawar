@@ -7,6 +7,7 @@ public  class MyVector implements AddElementInterface
 	 Vector<Integer> vec = new Vector<Integer>();
 	public  String FileName;
 	static int K;
+	public String Results;
 	Results result=new Results(); 
 	/**
 	 * This method adds elemtnts from fileprocessor tp MyVector vector
@@ -64,13 +65,13 @@ public  class MyVector implements AddElementInterface
 		K=Re;
 	}
 
-	public Results getReults()
+	public String getResults()
 	{
-		return result;
+		return Results;
 	}
 		
-	public void setResults(Results Re)
+	public void setResults(String Re)
 	{
-		result=Re;
+		Results=Re;
 	}
 }

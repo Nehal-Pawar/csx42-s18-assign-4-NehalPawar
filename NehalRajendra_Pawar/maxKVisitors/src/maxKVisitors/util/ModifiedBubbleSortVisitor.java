@@ -12,9 +12,8 @@ public class ModifiedBubbleSortVisitor implements IVisitor
 	public void visit(MyVector myv)
 	{
 		Vector<Integer> vec=myv.getvec();
-		String Result="";
-		//Results result=myv.getResult();
-		//results.="K elements in Vector \n";
+		String Result="MyVector Bubble sort maxK are : ";
+		
 		int n = vec.size();
 		for (int i = 0; i < n-1; i++)
 		    for (int j = 0; j < n-i-1; j++)
@@ -26,8 +25,8 @@ public class ModifiedBubbleSortVisitor implements IVisitor
 		    	}
 			for (int j = 0; j < myv.getK(); j++) {
 			    Result=Result+vec.get(j)+" ";
-			}
-			//myv.set()
+			}			
+			myv.setResults(Result);
 	}
 
 	/**
@@ -38,7 +37,7 @@ public class ModifiedBubbleSortVisitor implements IVisitor
 	public void visit(MyArray mya)
 	{
 		ArrayList<Integer> vec=mya.getlist();
-		String Result="";
+		String Result="MyArray Bubble sort maxK are : ";
 		int n = vec.size();
 		for (int i = 0; i < n-1; i++)
 		    for (int j = 0; j < n-i-1; j++)
@@ -51,5 +50,6 @@ public class ModifiedBubbleSortVisitor implements IVisitor
 			for (int j = 0; j < mya.getK(); j++) {
 			    Result=Result+vec.get(j)+" ";
 			}
+			mya.setResults(Result);
 	}
 }
