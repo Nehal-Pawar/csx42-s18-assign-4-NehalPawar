@@ -9,6 +9,11 @@ public class FileProcessor
 {
     FileReader F = null;
     BufferedReader BR = null;
+
+	/**
+	 * This method creates objects for  fileprocessor to read file
+	 * @param String InputFileName
+	 */
     public void openFile(String InputFileName)
     {
         try
@@ -24,6 +29,11 @@ public class FileProcessor
             System.exit(1);
         }
     }
+
+	/**
+	 * This method returns line by line read fe=rom file
+	 * @return String line
+	 */
     public String nextint()
     {
         String line = null;

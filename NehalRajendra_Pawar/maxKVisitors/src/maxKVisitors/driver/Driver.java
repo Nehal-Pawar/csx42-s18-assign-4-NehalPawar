@@ -5,6 +5,8 @@ import maxKVisitors.util.Results;
 import maxKVisitors.util.MyLogger;
 import maxKVisitors.util.IVisitor;
 import maxKVisitors.util.PopulateVisitor;
+import maxKVisitors.util.ModifiedBubbleSortVisitor;
+import maxKVisitors.util.MaxHeapVisitor;
 import maxKVisitors.util.MyArray;
 import maxKVisitors.util.MyVector;
 import maxKVisitors.util.AddElementInterface;
@@ -15,12 +17,12 @@ public class Driver
     public static void main(String[] args)
     {
         String INPUTFILE = args[0];
-       /* String DELETEFILE = args[1];
-        String OUTPUTFILE1 = args[2];
+        String K = args[1];
+       /* String OUTPUTFILE1 = args[2];
         String OUTPUTFILE2 = args[3];
-        String OUTPUTFILE3 = args[4];
-        String DEBUGVALUE = args[5];
-	*/
+        String OUTPUTFILE3 = args[4];*/
+        String DEBUGVALUE = args[2];
+	
         //Read all the parameters and vlaidate if all are taken thorugh command line
 
         for (int i = 0; i < args.length; i++)
@@ -40,9 +42,32 @@ public class Driver
             System.exit(1);
         }
 	
-	MyVector myv1=new MyVector(); 
+	IVisitor Obj2=new ModifiedBubbleSortVisitor();
+	IVisitor Obj3=new MaxHeapVisitor();	
         IVisitor Obj=new PopulateVisitor();
-        myv1.setFileName(INPUTFILE);
-	Obj.visit(myv1);
+
+	MyVector myv1=new MyVector(); 
+        myv1.setFileName(INPUTFILE);	
+	myv1.accept(Obj);	
+	myv1.accept(Obj2);
+
+	MyVector myv2=new MyVector(); 
+        myv2.setFileName(INPUTFILE);
+	myv2.accept(Obj);        
+	myv2.accept(Obj3);
+
+
+	MyArray mya1=new MyArray(); 
+	mya1.setFileName(INPUTFILE);
+        mya1.accept(Obj);
+	mya1.accept(Obj2);
+    
+	MyArray mya2=new MyArray(); 
+	mya2.setFileName(INPUTFILE);
+        mya2.accept(Obj);
+	mya2.accept(Obj3);
+
+	Results Display=new Results();
+	
     }
 }

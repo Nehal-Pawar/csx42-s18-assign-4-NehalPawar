@@ -35,8 +35,8 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
     }
 
     /**
-     * 
-     * @param s
+     * this method displays string passed 
+     * @param String s
      */
     public void writeToStdout(String s)
     {
@@ -50,6 +50,7 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
     public void storeNewResult(String result)
     {
         TestResult.add(result);
+	writeToStdout(result);
         MyLogger.writeMessage(result, MyLogger.DebugLevel.AllStates);
     }
 		
