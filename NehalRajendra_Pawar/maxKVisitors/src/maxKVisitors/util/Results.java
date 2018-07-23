@@ -40,7 +40,7 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
      */
     public void writeToStdout(String s)
     {
-	System.out.println(s);
+	MyLogger.writeMessage(s, MyLogger.DebugLevel.AllStates);
     }
 
 
@@ -52,6 +52,5 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
         TestResult.add(result);
 	writeToStdout(result);
         MyLogger.writeMessage(result, MyLogger.DebugLevel.AllStates);
-    }
-		
+    }		
 }
